@@ -131,8 +131,8 @@ namespace Microsoft.AspNetCore.Components.Server.Circuits
                 var result = _circuitFactory.CreateCircuitHost(
                     context,
                     client: new CircuitClientProxy(), // This creates an "offline" client.
+                    GetFullBaseUri(context.Request)
                     GetFullUri(context.Request),
-                    GetFullBaseUri(context.Request),
                     context.User);
 
                 result.UnhandledException += CircuitHost_UnhandledException;
