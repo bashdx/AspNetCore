@@ -29,7 +29,7 @@
       SkipGetTargetFrameworkProperties="true"
       UndefineProperties="TargetFramework"
       Private="false"
-      Condition="'$(BuildNodeJS)' != 'false'" />
+      Condition="'$(BuildNodeJS)' != 'false' and '$(BuildingInsideVisualStudio)' != 'true'" />
   </ItemGroup>
 
   <PropertyGroup>
