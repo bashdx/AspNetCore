@@ -253,7 +253,7 @@ namespace Test
     public class MyComponent : ComponentBase
     {
         [Parameter]
-        public Action<UIEventArgs> OnClick { get; set; }
+        public Action<EventArgs> OnClick { get; set; }
     }
 }
 "));
@@ -280,7 +280,7 @@ namespace Test
                     AssertFrame.Attribute(frame, "OnClick", 1);
 
                     // The handler will have been assigned to a lambda
-                    var handler = Assert.IsType<Action<UIEventArgs>>(frame.AttributeValue);
+                    var handler = Assert.IsType<Action<EventArgs>>(frame.AttributeValue);
                     Assert.Equal("Test.TestComponent", handler.Target.GetType().FullName);
                     Assert.Equal("Increment", handler.Method.Name);
                 });
